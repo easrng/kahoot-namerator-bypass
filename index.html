@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kahoot Namerator Bypass</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 70ch;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+    </style>
+    <script data-stats-config="beacon=https://collect.easrng.workers.dev&site=kahootName&loadEvent=1">
+    !((e,a,s,r,n,g)=>{e.head.append(a=Object.assign(e.createElement('script'),{src:'https://easrng.github.io/stats/stats.js',async:!0}));a.onerror=o=>g.map(z=>z.e(o),g.push=x=>r.reject(o));s[n]=new Proxy({},{get:(o,f)=>f=='_q'?g:(...a)=>new r((c,e)=>g.push({f,a,c,e}))})})(document,0,window,Promise,"stats",[]);
+    </script>
+  </head>
+  <body onload="update()">
+    <h1>Kahoot Namerator Bypass</h1>
+    <blockquote>
+      <b>Hi!</b> This site wasn't working for a while but I fixed it and it
+      works now!<br>
+      <address>&mdash; easrng</address>
+    </blockquote>
+    <p>
+      Annoyed that Kahoots you're joining have the Namerator on, so a random name is picked instead of letting you choose? Don't despair, you can still set your name. Here's how:
+    </p>
+    <ol>
+      <li>
+        Get the Redirector extension. It is available for:
+        <ul>
+          <li>
+            <a href="https://chrome.google.com/webstore/detail/redirector/ocgpenflpmgnfapjedencafcfakcekcd" target="_blank">
+              Chrome
+            </a>
+          </li>
+          <li>
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/redirector/" target="_blank">
+              Firefox
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Choose a name, and enter it here:<br>
+        <input id="nameInput" oninput="update()">
+      </li>
+      <li>Download <a id="downloadLink" download="kahootRedirect.json" href="#">this file</a>.</li>
+      <li>Click the Redirector icon.</li>
+      <li>Click "Edit Redirects".</li>
+      <li>Click Import and open the file you downloaded.</li>
+    </ol>
+    <p>
+      🎉 <b>You're done!</b> Next time you join a Kahoot with the Namerator enabled, it will show the name you chose.
+    </p>
+    <br>
+    <br>
+    <hr>
+    <footer>
+      Project by <a href="https://easrng.net">easrng</a><br>
+      <small>
+        <br>
+        I am not affiliated with the Redirector extension, it was just is the first one I found that looked good.<br>
+        Kahoot is a trademark of Kahoot! AS.
+      </small>
+    </footer>
+    <script>
+      function update(){
+        if(downloadLink.href) URL.revokeObjectURL(downloadLink.href)
+        downloadLink.href = URL.createObjectURL(new Blob([JSON.stringify({"createdBy":"Redirector v3.5.3","createdAt":"2022-01-26T22:53:04.511Z","redirects":[{"description":"Bypass Kahoot Namerator","exampleUrl":"https://apis.kahoot.it/namerator","exampleResult":"https://set-kahoot-name.glitch.me/name/Testing123","error":null,"includePattern":"https://apis.kahoot.it/namerator","excludePattern":"","patternDesc":"","redirectUrl":"https://set-kahoot-name.glitch.me/name/"+encodeURIComponent(nameInput.value),"patternType":"W","processMatches":"noProcessing","disabled":false,"grouped":false,"appliesTo":["xmlhttprequest"]}]})], {type:"application/json"}))
+      }
+    </script>
+  </body>
+</html>

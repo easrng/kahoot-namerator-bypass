@@ -1,1 +1,0 @@
-# kahoot-namerator-bypass
